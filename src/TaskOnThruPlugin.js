@@ -3,8 +3,9 @@ import { VERSION } from '@twilio/flex-ui';
 import { FlexPlugin } from 'flex-plugin';
 
 import CustomTaskListContainer from './components/CustomTaskList/CustomTaskList.Container';
+import TaskOnThruButton from './components/TaskOnThru/TaskOnThruButton';
+
 import reducers, { namespace } from './states';
-import {TaskPassButton} from '../../plugin-TaskDefer/src/components/PassTasks/TaskPassButton';
 
 const PLUGIN_NAME = 'TaskOnThruPlugin';
 
@@ -21,21 +22,25 @@ export default class TaskOnThruPlugin extends FlexPlugin {
    * @param manager { import('@twilio/flex-ui').Manager }
    */
   init(flex, manager) {
+
     this.registerReducers(manager);
 
     const options = { sortOrder: -1 };
 
-    flex.MainHeader.Content.add(
-      <TaskPassButton
-        key="no-interrupt-switch-key"
-        manager={manager}
-        flex={flex}
-      />,
-      {
-        sortOrder: -1,
-        align: 'end'
-      }
-    );
+    flex
+      .MainHeader
+      .Content
+      .add(
+        <TaskOnThruButton
+          key="no-interrupt-switch-key"
+          manager={manager}
+          flex={flex}
+        />,
+        {
+          sortOrder: -1,
+          align: 'end'
+        }
+      );
 
     flex.AgentDesktopView
       .Panel1
