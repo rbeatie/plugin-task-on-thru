@@ -8,6 +8,6 @@
         "@twilio/flex-ui": "^1"
       }
     ],
-    "src": "http://localhost:3000/plugin-task-on-thru.js"
+    "src": "http://localhost:3001/plugin-task-on-thru.js"
   }
 ]
