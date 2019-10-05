@@ -1,37 +1,83 @@
-Welcome to Glitch
-=================
+# TaskOnThru
+A way to toggle your availability for tasks from a task channel.
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
+    
+**-WIP-//-WIP-//-WIP-//-WIP-//-WIP-//-WIP-//-WIP-//-WIP-//-WIP-//-WIP-**
 
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
+Come back soon please. 
 
-Find out more [about Glitch](https://glitch.com/about).
+## Button Component
+
+```jsx
+<TaskThruButton 
+    taskChannel="call"
+    defaultState={{
+        on: true
+    }}
+    offState={{
+      activity: 'available'
+    }}
+ />
+
+<TaskThruButton 
+    taskChannel="chat"
+ />
+
+<TaskThruButton 
+    taskChannel="default"
+ />
+
+<TaskThruButton 
+    taskChannel="custom1"
+ />
 
 
-Your Project
-------------
+```
 
-### ← README.md
 
-That's this file, where you can tell people what your cool website does and how you built it.
+# Your custom Twilio Flex Plugin
 
-### ← index.html
+Twilio Flex Plugins allow you to customize the appearance and behavior of [Twilio Flex](https://www.twilio.com/flex). If you want to learn more about the capabilities and how to use the API, check out our [Flex documentation](https://www.twilio.com/docs/flex).
 
-Where you'll write the content of your website. 
+## Setup
 
-### ← style.css
+Make sure you have [Node.js](https://nodejs.org) as well as [`npm`](https://npmjs.com) installed.
 
-CSS files add styling rules to your content.
+Afterwards, install the dependencies by running `npm install`:
 
-### ← script.js
+```bash
+cd 
 
-If you're feeling fancy you can add interactivity to your site with JavaScript.
+# If you use npm
+npm install
+```
 
-### ← assets
+## Development
 
-Drag in `assets`, like images or music, to add them to your project
+In order to develop locally, you can use the Webpack Dev Server by running:
 
-Made by [Glitch](https://glitch.com/)
--------------------
+```bash
+npm start
+```
 
-\ ゜o゜)ノ
+This will automatically start up the Webpack Dev Server and open the browser for you. Your app will run on `http://localhost:8080`. If you want to change that you can do this by setting the `PORT` environment variable:
+
+```bash
+PORT=3000 npm start
+```
+
+When you make changes to your code, the browser window will be automatically refreshed.
+
+## Deploy
+
+Once you are happy with your plugin, you have to bundle it in order to deploy it to Twilio Flex.
+
+Run the following command to start the bundling:
+
+```bash
+npm run build
+```
+
+Afterwards, you'll find in your project a `build/` folder that contains a file with the name of your plugin project. For example, `plugin-example.js`. Take this file and upload it into the Assets part of your Twilio Runtime.
+
+Note: Common packages like `React`, `ReactDOM`, `Redux` and `ReactRedux` are not bundled with the build because they are treated as external dependencies so the plugin will depend on Flex to provide them globally.
