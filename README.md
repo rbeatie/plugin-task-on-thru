@@ -1,4 +1,4 @@
-# PassTask
+# TaskOnThru
 A way to toggle your availability for tasks from a task channel.
 
     
