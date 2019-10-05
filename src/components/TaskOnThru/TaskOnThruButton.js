@@ -1,5 +1,5 @@
 import React from 'react';
-import NoInterruptStore, { ACTIONS } from './/NoInterruptStore';
+import NoInterruptStore, { ACTIONS } from './NoInterruptStore';
 import { NoInterruptGrey, NoInterruptRed } from './Icons/NoInturrpt.Icons';
 import { updateWorker } from '../../Utilities/WorkerHelpers';
 import { connect } from 'react-redux';
