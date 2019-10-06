@@ -39,3 +39,4 @@ function objectToURLParams(params) {
 
   return encodeURI(result);
 }
+

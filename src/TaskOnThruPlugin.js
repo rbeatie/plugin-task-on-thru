@@ -3,7 +3,8 @@ import { VERSION } from '@twilio/flex-ui';
 import { FlexPlugin } from 'flex-plugin';
 
 import CustomTaskListContainer from './components/CustomTaskList/CustomTaskList.Container';
-import TaskOnThruButton from './components/TaskOnThru/TaskOnThruButton';
+
+import TaskOnThruButton from './components/TaskOnThru/TaskOnThru';
 
 import reducers, { namespace } from './states';
 
