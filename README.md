@@ -1,39 +1,37 @@
 # TaskOnThru
+
 A way to toggle your availability for tasks from a task channel.
 
-    
 **-WIP-//-WIP-//-WIP-//-WIP-//-WIP-//-WIP-//-WIP-//-WIP-//-WIP-//-WIP-**
 
-Come back soon please. 
+Come back soon please.
 
 ## Button Component
 
 ```jsx
-<TaskThruButton 
+  <TaskThru
+    enabled={true}
+    controlType="{'button' | 'hidden'}"
     taskChannel="call"
-    defaultState={{
-        on: true
-    }}
+    enableOn={'outbound' | 'inbound' | 'call' }
+    disableOn={'afterCompleteTask' | 'afterWrapupTask'}
     offState={{
       activity: 'available'
     }}
- />
+  />
 
-<TaskThruButton 
+  <TaskThruButton
     taskChannel="chat"
- />
+  />
 
-<TaskThruButton 
+  <TaskThruButton
     taskChannel="default"
- />
+   />
 
-<TaskThruButton 
+  <TaskThruButton
     taskChannel="custom1"
- />
-
-
+   />
 ```
-
 
 # Your custom Twilio Flex Plugin
 
@@ -46,7 +44,7 @@ Make sure you have [Node.js](https://nodejs.org) as well as [`npm`](https://npmj
 Afterwards, install the dependencies by running `npm install`:
 
 ```bash
-cd 
+cd
 
 # If you use npm
 npm install

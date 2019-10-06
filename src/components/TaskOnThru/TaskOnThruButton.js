@@ -1,6 +1,6 @@
 import React from 'react';
-import NoInterruptStore, { ACTIONS } from './/NoInterruptStore';
-import { NoInterruptGrey, NoInterruptRed } from './Icons/NoInturrpt.Icons';
+import NoInterruptStore, { ACTIONS } from './NoInterruptStore';
+import { NoInterruptGrey, NoInterruptRed } from './Icons/TaskGoThru.Icons';
 import { updateWorker } from '../../Utilities/WorkerHelpers';
 import { connect } from 'react-redux';
 import { withTheme, Icon } from '@twilio/flex-ui';
@@ -8,17 +8,19 @@ import {css} from 'emotion';
 
 export class TaskOnThruButton extends React.Component {
 
-  state = {
-    showTooltip: false,
-    active: false,
-    storeUnsub: void 0
-  };
-
   constructor(props) {
     super(props);
+   
+    this.state = {
+      showTooltip: false,
+      active: false,
+      storeUnsub: void 0
+    };
+    
     this.setListeners();
+  
     this.storeListener = this.storeListener.bind(this);
-    this.errorHandler = this.errorHandler.bind(this)
+    this.errorHandler = this.errorHandler.bind(this);
   }
 
   componentDidMount() {
